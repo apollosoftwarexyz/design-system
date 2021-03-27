@@ -56,7 +56,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   border-radius: $radius-default;
-  box-shadow: $shadow-s-inset;
+  box-shadow: $shadow-inset;
   margin-bottom: $space-xs;
   font-size: $size-sm;
   font-family: $font-text;

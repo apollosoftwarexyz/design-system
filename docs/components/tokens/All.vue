@@ -140,7 +140,7 @@ export default {
     @include inline-space($space-xs);
     border-radius: $radius-default;
     background: $color-white;
-    box-shadow: $shadow-s-inset, $shadow-s-inset, $shadow-s-inset;
+    box-shadow: $shadow-inset, $shadow-inset, $shadow-inset;
     margin-top: $space-xxs;
     width: $space-s;
     height: $space-s;
