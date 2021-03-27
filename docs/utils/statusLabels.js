@@ -1,6 +1,5 @@
 /**
- * This is Vue Design System’s helper util that
- * creates component status labels.
+ * This is a helper util that creates component status labels.
  */
 
 export default {

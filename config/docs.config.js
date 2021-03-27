@@ -33,7 +33,7 @@ module.exports = {
    */
   assetsDir: path.join(__dirname, "../src/assets"),
   /**
-   * Enabling the below option will break things in Vue Design System!
+   * Enabling the below option will break things in the design system!
    */
   skipComponentsWithoutExample: false,
   /**
@@ -195,7 +195,7 @@ module.exports = {
   styleguideDir: "../dist/docs",
   printServerInstructions() {},
   printBuildInstructions(config) {
-    console.log(chalk.cyan("\n  Design System Docs build finished succesfully!\n"))
+    console.log(chalk.cyan("\n  Apollo Design System Docs build finished succesfully!\n"))
     console.log(
       chalk.yellow(
         "  Tip: You can now deploy the docs as a static website.\n" +

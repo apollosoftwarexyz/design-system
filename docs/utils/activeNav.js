@@ -1,6 +1,5 @@
 /**
- * This is Vue Design System’s helper util that
- * highlights the currently active nav item.
+ * This is a helper util that highlights the currently active nav item.
  */
 
 export default {

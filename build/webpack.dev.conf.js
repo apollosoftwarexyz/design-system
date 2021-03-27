@@ -83,8 +83,8 @@ module.exports = new Promise((resolve, reject) => {
         new FriendlyErrorsPlugin({
           compilationSuccessInfo: {
             messages: [
-              `Design System Docs: http://${devWebpackConfig.devServer.host}:6060 \n`,
-              `Vue.js App: http://${devWebpackConfig.devServer.host}:${port} \n`,
+              `Apollo Design System Docs: http://${devWebpackConfig.devServer.host}:6060 \n`,
+              `Example Vue.js App: http://${devWebpackConfig.devServer.host}:${port} \n`,
             ],
           },
           onErrors: config.dev.notifyOnErrors ? utils.createNotifierCallback() : undefined,

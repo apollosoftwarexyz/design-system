@@ -1,6 +1,5 @@
 /**
- * This is Vue Design System’s helper util that makes
- * sure that filtering will reveal hidden links too.
+ * This is a helper util that makes sure that filtering will reveal hidden links too.
  */
 
 export default {

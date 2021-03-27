@@ -1,5 +1,5 @@
 /**
- * Web Font Loader takes care of Vue Design System’s font loading.
+ * The Web Font Loader handles font loading.
  * For full documentation, see: https://github.com/typekit/webfontloader
  */
 import WebFont from "webfontloader"

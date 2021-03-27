@@ -4,7 +4,7 @@
 
 <script>
 /**
- * The input component wraps the vanilla HTML input element and adds common theming options.
+ * The Input component wraps the vanilla HTML input element and adds common theming options.
  *
  * Inputs are commonly used in forms to request data from the user.
  */
