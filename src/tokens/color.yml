@@ -1,0 +1,116 @@
+#
+# COLOR TOKENS
+# Use these tokens to set a color.
+# For reference, see http://hslpicker.com/
+#
+# To make things a little simpler for your team,
+# utilize both global & local tokens for colors.
+#
+
+aliases:
+  apollo:
+    value: 259, 100%
+
+  success:
+    value: "#3AC26E"
+
+  info:
+    value: "#069FC2"
+
+  warn:
+    value: "#FF9412"
+
+  error:
+    value: "#F7372D"
+
+  rich_black:
+    value: "#001123"
+  silver:
+    value: 210, 8%
+props:
+  #
+  # Brand Colors
+  #
+  color_apollo_darker:
+    value: "hsla({!apollo}, 24%, 1)"
+    category: color:brand
+    order: 1
+    suborder: 1
+
+  color_apollo_dark:
+    value: "hsla({!apollo}, 34%, 1)"
+    category: color:brand
+    order: 1
+    suborder: 2
+
+  color_apollo:
+    value: "hsla({!apollo}, 64%, 1)"
+    category: color:brand
+    order: 1
+    suborder: 3
+
+  color_apollo_light:
+    value: "hsla({!apollo}, 74%, 1)"
+    category: color:brand
+    order: 1
+    suborder: 4
+
+  color_apollo_lighter:
+    value: "hsla({!apollo}, 84%, 1)"
+    category: color:brand
+    order: 1
+    suborder: 5
+
+  #
+  # Status Colors
+  #
+  color_success:
+    value: "{!success}"
+    category: color:status
+    order: 2
+    suborder: 1
+
+  color_info:
+    value: "{!info}"
+    category: color:status
+    order: 2
+    suborder: 2
+
+  color_warn:
+    value: "{!warn}"
+    category: color:status
+    order: 2
+    suborder: 3
+
+  color_error:
+    value: "{!error}"
+    category: color:status
+    order: 2
+    suborder: 4
+
+  #
+  # Preset Colors
+  #
+  color_rich_black:
+    value: "{!rich_black}"
+    category: color:preset
+    order: 3
+  color_silver:
+    value: "hsla({!silver}, 53%, 1)"
+    category: color:preset
+    order: 3
+  color_pale_silver:
+    value: "hsla({!silver}, 73%, 1)"
+    category: color:preset
+    order: 3
+  color_off_white:
+    value: "#F3F4F6"
+    category: color:preset
+    order: 3
+  color_white:
+    value: "#fff"
+    category: color:preset
+    order: 3
+global:
+  type: color
+  category: color

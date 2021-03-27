@@ -1,0 +1,33 @@
+#
+# FONT-SIZE TOKENS
+# Use these tokens to set a font-size.
+#
+
+props:
+  size_xxxl:
+    value: "50pt"
+    order: 1
+  size_xxl:
+    value: "36pt"
+    order: 2
+  size_xl:
+    value: "28pt"
+    order: 3
+  size_lg:
+    value: "20pt"
+    order: 4
+  size_default:
+    value: "14pt"
+    order: 5
+  size_ui_default:
+    value: "12pt"
+    order: 6
+  size_sm:
+    value: "10pt"
+    order: 7
+  size_tiny:
+    value: "8pt"
+    order: 8
+global:
+  type: number
+  category: font-size
