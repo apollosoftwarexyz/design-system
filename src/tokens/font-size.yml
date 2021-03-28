@@ -19,12 +19,15 @@ props:
   size_default:
     value: "14pt"
     order: 5
+  size_ui_default:
+    value: "10.5pt"
+    order: 6
   size_sm:
     value: "10pt"
-    order: 6
+    order: 7
   size_tiny:
     value: "8pt"
-    order: 7
+    order: 8
 global:
   type: number
   category: font-size

@@ -366,6 +366,10 @@ div[class^="rsg--preview"] {
   border-top-right-radius: $radius-default;
 }
 
+div[class^="rsg--preview"] {
+  font-family: $font-text;
+}
+
 // If you edit the component categories, you have to edit
 // these to match as well.
 div[data-preview="Elements"],

@@ -11,7 +11,7 @@
 
 <script>
 /**
- * The Button element wraps the vanilla HTML button and adds common theming options.
+ * ### The Button element wraps the vanilla HTML button and adds common theming options.
  *
  * Buttons are used to invoke a specific action in the context of its parent container. Buttons should **not** be
  * used for navigation, you should use a [Link](#/Elements/Link) instead.
@@ -99,24 +99,25 @@ button {
   user-select: none;
 
   border-width: 1px;
-  font-size: $size-sm;
 
   box-sizing: border-box;
   border-style: solid;
 
+  font-weight: 500;
+  font-size: $size-ui-default;
   font-family: $font-text;
-  //font-weight: $weight-semi-bold;
   color: $color-white;
 
-  letter-spacing: $tracking-wide;
+  letter-spacing: 0.5px;
   text-align: center;
 
   line-height: 1.25rem;
 
   padding: $space-xs #{$space-m - $space-xxs};
+  margin: $space-xxs;
 
-  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease,
-    transform 0.2s ease;
+  transition: color 0.1s ease, border-color 0.1s ease, background-color 0.1s ease,
+    transform 0.1s ease;
 
   &.pointer {
     cursor: pointer;
@@ -128,12 +129,12 @@ button {
   }
 
   &:hover {
-    background-color: $color-apollo-light;
-    border-color: $color-apollo-light;
+    //background-color: $color-apollo-light;
+    //border-color: $color-apollo-light;
   }
 
   &:not(.disabled):active {
-    transform: scale(0.95);
+    transform: scale(0.975);
   }
 
   &.secondary {
@@ -141,8 +142,8 @@ button {
     border-color: $color-silver;
 
     &:hover {
-      background-color: $color-pale-silver;
-      border-color: $color-pale-silver;
+      //background-color: $color-pale-silver;
+      //border-color: $color-pale-silver;
     }
   }
 

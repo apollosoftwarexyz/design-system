@@ -1,5 +1,5 @@
 <template>
-  <div class="loader">
+  <div class="loader circular" v-if="type === 'circular'">
     <div class="inner" :class="{ large }">
       <svg class="circular" viewBox="25 25 50 50">
         <circle class="path path3" cx="50" cy="50" r="20" />
@@ -8,12 +8,17 @@
       </svg>
     </div>
   </div>
+  <div class="loader linear" v-else-if="type === 'linear'" :class="{ large }" />
 </template>
 
 <style lang="scss" scoped>
 $loader-color: $color-apollo;
 
 .loader {
+  margin: $space-s;
+}
+
+.loader.circular {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -25,83 +30,124 @@ $loader-color: $color-apollo;
   align-items: center;
 
   margin: $space-s;
-}
 
-.inner {
-  position: relative;
-  display: inline-block;
-  height: 32px;
-  width: 32px;
+  .inner {
+    position: relative;
+    display: inline-block;
+    height: 32px;
+    width: 32px;
 
-  &.large {
-    height: 52px;
-    width: 52px;
+    &.large {
+      height: 52px;
+      width: 52px;
 
-    .path {
-      stroke-width: 4px;
+      .path {
+        stroke-width: 4px;
+      }
+    }
+
+    -webkit-transform: rotate(280deg);
+    transform: rotate(280deg);
+  }
+
+  .circular {
+    -webkit-animation: circularLoader 2s linear infinite;
+    animation: circularLoader 2s linear infinite;
+    height: 100%;
+    width: 100%;
+  }
+
+  .path {
+    -webkit-animation: circularSegment 2s ease-in-out infinite;
+    animation: circularSegment 2s ease-in-out infinite;
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    fill: none;
+    stroke-width: 6;
+    stroke-miterlimit: 10;
+    stroke-linecap: round;
+
+    stroke: $color-apollo;
+  }
+
+  .path2 {
+    -webkit-animation-delay: 0.15s;
+    animation-delay: 0.15s;
+
+    stroke: $color-apollo-light;
+    opacity: 0.6;
+  }
+
+  .path3 {
+    -webkit-animation-delay: 0.23s;
+    animation-delay: 0.23s;
+
+    stroke: $color-apollo-lighter;
+    opacity: 0.3;
+  }
+
+  @keyframes circularLoader {
+    to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
     }
   }
 
-  -webkit-transform: rotate(280deg);
-  transform: rotate(280deg);
-}
+  @keyframes circularSegment {
+    0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+    }
 
-.circular {
-  -webkit-animation: loader 2s linear infinite;
-  animation: loader 2s linear infinite;
-  height: 100%;
-  width: 100%;
-}
+    50% {
+      stroke-dasharray: 130, 200;
+    }
 
-.path {
-  -webkit-animation: segment 2s ease-in-out infinite;
-  animation: segment 2s ease-in-out infinite;
-  stroke-dasharray: 1, 200;
-  stroke-dashoffset: 0;
-  fill: none;
-  stroke-width: 6;
-  stroke-miterlimit: 10;
-  stroke-linecap: round;
-
-  stroke: $color-apollo;
-}
-
-.path2 {
-  -webkit-animation-delay: 0.15s;
-  animation-delay: 0.15s;
-
-  stroke: $color-apollo-light;
-  opacity: 0.6;
-}
-
-.path3 {
-  -webkit-animation-delay: 0.23s;
-  animation-delay: 0.23s;
-
-  stroke: $color-apollo-lighter;
-  opacity: 0.3;
-}
-
-@keyframes loader {
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+    to {
+      stroke-dasharray: 130, 200;
+      stroke-dashoffset: -124;
+    }
   }
 }
 
-@keyframes segment {
-  0% {
-    stroke-dasharray: 1, 200;
-    stroke-dashoffset: 0;
+$loaderWidth: 75px;
+
+.loader.linear {
+  position: relative;
+  display: block;
+  height: 6px;
+
+  background-color: rgba(100, 100, 100, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 0;
+    background-color: $color-apollo;
+    border-radius: 6px;
+
+    width: $loaderWidth;
+    height: 6px;
+
+    animation: linearLoader 4s infinite;
   }
 
-  50% {
-    stroke-dasharray: 130, 200;
-  }
-
-  to {
-    stroke-dasharray: 130, 200;
-    stroke-dashoffset: -124;
+  @keyframes linearLoader {
+    0% {
+      width: $loaderWidth;
+      left: -5px;
+    }
+    50% {
+      width: 100px;
+      left: calc(100% - #{$loaderWidth});
+    }
+    100% {
+      width: $loaderWidth;
+      left: -5px;
+    }
   }
 }
 </style>
@@ -136,7 +182,21 @@ export default {
 
   props: {
     /**
+     * Determines the style of the loading indicator.
+     *
+     * Valid options are `circular` and `linear`.
+     */
+    type: {
+      type: String,
+      default: "circular",
+      required: false,
+      validator: value => ["circular", "linear"].includes(value),
+    },
+
+    /**
      * If set, renders a large loader widget instead, useful for big dialogs or full-page loaders.
+     *
+     * This is only valid if the `type` is `circular`.
      */
     large: {
       type: Boolean,
@@ -149,9 +209,13 @@ export default {
 
 <docs>
 ```vue
-<div>
+<div class="container">
     <Loader />
     <Loader large />
+
+    <br>
+
+    <Loader type="linear" />
 </div>
 ```
 </docs>
