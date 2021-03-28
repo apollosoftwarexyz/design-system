@@ -128,11 +128,6 @@ button {
     width: 100%;
   }
 
-  &:hover {
-    //background-color: $color-apollo-light;
-    //border-color: $color-apollo-light;
-  }
-
   &:not(.disabled):active {
     transform: scale(0.975);
   }
@@ -140,11 +135,6 @@ button {
   &.secondary {
     background-color: $color-silver;
     border-color: $color-silver;
-
-    &:hover {
-      //background-color: $color-pale-silver;
-      //border-color: $color-pale-silver;
-    }
   }
 
   &.disabled {
