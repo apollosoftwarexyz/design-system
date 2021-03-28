@@ -179,6 +179,7 @@ $loaderWidth: 75px;
 export default {
   name: "Loader",
   status: "review",
+  version: "0.0.1",
 
   props: {
     /**

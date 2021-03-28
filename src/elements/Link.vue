@@ -60,8 +60,8 @@ a {
  */
 export default {
   name: "Link",
-  status: "prototype",
-  version: "1.0.0",
+  status: "review",
+  version: "0.0.1",
 
   props: {
     /**

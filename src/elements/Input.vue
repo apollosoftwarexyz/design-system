@@ -11,6 +11,7 @@
 export default {
   name: "Input",
   status: "prototype",
+  version: "0.0.1",
 
   props: {
     /**

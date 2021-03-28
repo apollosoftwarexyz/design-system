@@ -26,7 +26,8 @@
  */
 export default {
   name: "Button",
-  status: "prototype",
+  status: "review",
+  version: "0.0.1",
 
   props: {
     /**
