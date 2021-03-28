@@ -10,6 +10,8 @@ props:
     value: "6px"
   radius_circle:
     value: "50%"
+  radius_full:
+    value: "9999px"
 global:
   type: number
   category: border-radius

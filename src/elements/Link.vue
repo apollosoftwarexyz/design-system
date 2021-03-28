@@ -38,10 +38,8 @@ a {
  * ### Links are navigational elements generally used in sentences or paragraphs to redirect the user to another page.
  *
  * Links are purely navigational elements. They should **not** be used for invoking specific actions, you should use a
- * [Button](#/Elements/Button) instead.
- *
- * The link's caption should make it immediately obvious what action is going to be performed so you should avoid
- * captioning a link with "click here" for example.
+ * [Button](#/Elements/Button) instead. A notable exception to this rule is that you might use a link to open a modal
+ * dialog containing extra content though arguably this is a form of navigation.
  *
  * When deciding upon what part of a text paragraph to make a link, you should generally try to encapsulate the
  * smallest [imperative clause](https://en.wikipedia.org/wiki/Imperative_mood#English) relevant to the link. For example, considering the phrase "...for more information,
@@ -57,6 +55,9 @@ a {
  * standalone link as it can be considered a specific action that the user may perform rather than just purely a page
  * redirect, however as suggested above a link might be used inside the text section to link to a terms and conditions
  * page.
+ *
+ * A link's caption should make it immediately obvious what action is going to be performed so you should avoid
+ * captioning a link with "click here", for example.
  */
 export default {
   name: "Link",
