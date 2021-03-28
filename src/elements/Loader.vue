@@ -107,13 +107,36 @@ $loader-color: $color-apollo;
 </style>
 
 <script>
+/**
+ * Loaders are indeterminate progress indicators used to convey to the user that an operation is in progress
+ * such as fetching data or saving a user's changes. These should be used when the progress or details of an
+ * operation are unknown, to indicate to the user that the operation is in fact still being performed and to
+ * reassure the user that a delay is expected.
+ *
+ * Generally, you **should not** use a Loader if any of the following are true:
+ *
+ * - the progress, exact duration and/or steps of the operation are known; use a Progress indicator instead,
+ * - there is a reasonable chance the operation will last for longer than 10 seconds*, or
+ * - it is known that the operation will **always** be less than 100ms as it is unneccessary and may actually
+ * worsen the UX (ignore this rule if networking is involved).
+ *
+ * \*For long-running actions (&gt;10s), a Loader should not be used (at least by itself) because, by convention,
+ * it is used as a temporary progress indicator and it does not provide any feedback on the progress of the
+ * operation being performed, thus using it for long-running operations may cause the user to become frustrated.
+ * In this instance, you should consider either:
+ *
+ * - deferring the operation to the background and displaying a notification upon completion (if the operation
+ * is non-blocking and the application can be used despite the operation), or
+ * - displaying a full page dialog or loader with a time and/or progress estimate (if the operation is blocking
+ * and the user cannot be allowed to perform other actions in the background).
+ */
 export default {
   name: "Loader",
   status: "review",
 
   props: {
     /**
-     * If set, renders a large loader widget instead.
+     * If set, renders a large loader widget instead, useful for big dialogs or full-page loaders.
      */
     large: {
       type: Boolean,
